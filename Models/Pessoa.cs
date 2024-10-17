@@ -7,14 +7,16 @@ namespace ExemploExplorando.Models
 {
     public class Pessoa
     {
+        //campos
         private string _nome;
+        private int _idade;
 
+        //propriedades
         public string Nome
         {
-            get
-            {
-                return _nome.ToUpper();
-            }
+            // o sinal =>  é uma body expression que significa return
+            get => _nome.ToUpper();
+            //Validando o set
             set
             {
                 if (value == "")
@@ -25,7 +27,22 @@ namespace ExemploExplorando.Models
             }
 
         }
-        public int Idade { get; set; }
+        public string Sobrenome { get; set; }
+        public string NomeCompleto => $"{Nome} {Sobrenome}".ToUpper();
+        public int Idade
+        {
+            // o sinal =>  é uma body expression que significa return
+            get => _idade;
+            //Validando o set
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("A idade não pode ser menor que zero.");
+                }
+                _idade = value;
+            }
+        }
 
         public void Apresentar()
         {
