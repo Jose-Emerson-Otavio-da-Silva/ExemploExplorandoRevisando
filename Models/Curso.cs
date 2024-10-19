@@ -26,7 +26,7 @@ namespace ExemploExplorandoRevisando.Models
         }
         public void ListarAluno()
         {
-            Console.WriteLine($"Alunos do curso de: (Nome)");
+            Console.WriteLine($"Alunos do curso de: {Nome}");
             foreach (Pessoa aluno in Alunos)
             {
                 Console.WriteLine(aluno.NomeCompleto);
