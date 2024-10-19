@@ -7,6 +7,15 @@ namespace ExemploExplorando.Models
 {
     public class Pessoa
     {
+        //Construtores 
+        //um construtor exige o preenchimento de nome e sobrenome
+        //O outro não exige o preenchimento de propriedades, permitindo escolher entre preencher ou nao
+        public Pessoa() { }
+        public Pessoa(string nome, string sobrenome)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
+        }
         //campos
         private string _nome;
         private int _idade;
